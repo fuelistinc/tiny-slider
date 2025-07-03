@@ -1037,6 +1037,7 @@ export var tns = function(options) {
         navItems = navContainer.children;
         forEach(navItems, function(item, i) {
           setAttrs(item, {
+            'role': 'group',
             'data-nav': i,
             'tabindex': '-1',
             'aria-label': navStr + (i + 1),
@@ -1052,7 +1053,7 @@ export var tns = function(options) {
           // hide nav items by default
           navHtml += '<button type="button" data-nav="' + i +'" tabindex="-1" aria-controls="' + slideId + '" ' + hiddenStr + ' aria-label="' + navStr + (i + 1) +'"></button>';
         }
-        navHtml = '<div class="tns-nav" aria-label="Carousel Pagination">' + navHtml + '</div>';
+        navHtml = '<div role="group" class="tns-nav" aria-label="Carousel Pagination">' + navHtml + '</div>';
         outerWrapper.insertAdjacentHTML(getInsertPosition(options.navPosition), navHtml);
 
         navContainer = outerWrapper.querySelector('.tns-nav');
