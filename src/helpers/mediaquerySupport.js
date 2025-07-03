@@ -15,7 +15,6 @@ export function mediaquerySupport () {
       rule = '@media all and (min-width:1px){.tns-mq-test{position:absolute}}',
       position;
 
-  style.type = 'text/css';
   div.className = 'tns-mq-test';
 
   body.appendChild(style);
